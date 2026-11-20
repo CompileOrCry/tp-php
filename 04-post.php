@@ -17,7 +17,6 @@
     <form method="POST">
 
         <div>
-
             <label for="nom">
                 Nom :
             </label>
@@ -28,13 +27,11 @@
                 name="nom"
                 required
             >
-
         </div>
 
         <br>
 
         <div>
-
             <label for="email">
                 Email :
             </label>
@@ -45,13 +42,11 @@
                 name="email"
                 required
             >
-
         </div>
 
         <br>
 
         <div>
-
             <label for="age">
                 Âge :
             </label>
@@ -63,13 +58,26 @@
                 min="1"
                 required
             >
-
         </div>
 
         <br>
 
         <div>
+            <label for="ville">
+                Ville :
+            </label>
 
+            <input
+                type="text"
+                id="ville"
+                name="ville"
+                required
+            >
+        </div>
+
+        <br>
+
+        <div>
             <label for="message">
                 Message :
             </label>
@@ -82,7 +90,6 @@
                 rows="4"
                 cols="40"
             ></textarea>
-
         </div>
 
         <br>
@@ -100,12 +107,14 @@
         isset($_POST["nom"])
         && isset($_POST["email"])
         && isset($_POST["age"])
+        && isset($_POST["ville"])
         && isset($_POST["message"])
     ) {
 
         $nom = $_POST["nom"];
         $email = $_POST["email"];
         $age = $_POST["age"];
+        $ville = $_POST["ville"];
         $message = $_POST["message"];
 
         echo "<hr>";
@@ -122,6 +131,10 @@
 
         echo "<p>";
         echo "Âge : " . htmlspecialchars($age);
+        echo "</p>";
+
+        echo "<p>";
+        echo "Ville : " . htmlspecialchars($ville);
         echo "</p>";
 
         echo "<p>";
