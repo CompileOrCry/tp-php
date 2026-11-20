@@ -1,11 +1,14 @@
 <?php
 
-$nom = "";
+$nom = "Aicha";
+$ville = "Marrakech";
 
 if (isset($_GET["nom"])) {
-
     $nom = $_GET["nom"];
+}
 
+if (isset($_GET["ville"])) {
+    $ville = $_GET["ville"];
 }
 
 ?>
@@ -25,13 +28,15 @@ if (isset($_GET["nom"])) {
     <?php
 
     if ($nom != "") {
-
-        echo "<p>Bonjour " . $nom . "</p>";
-
+        echo "<p>Bonjour " . htmlspecialchars($nom) . "</p>";
     } else {
-
         echo "<p>Aucun nom reçu.</p>";
+    }
 
+    if ($ville != "") {
+        echo "<p>Ville : " . htmlspecialchars($ville) . "</p>";
+    } else {
+        echo "<p>Aucune ville reçue.</p>";
     }
 
     ?>

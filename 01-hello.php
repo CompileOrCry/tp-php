@@ -1,13 +1,5 @@
 <?php
-
-echo "Bonjour PHP !";
-
-echo "<br>";
-
-echo "Bienvenue dans mon premier programme PHP.";
-
-echo "<br>";
-
+echo "Bienvenue sur mon premier script PHP !<br>";
+echo "Je m'appelle Aicha ADDAOUI<br>";
+echo "Date : " . date("d/m/Y") . "<br>";
 echo "Heure du serveur : " . date("H:i:s");
-
-?>

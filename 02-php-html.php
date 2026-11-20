@@ -1,7 +1,15 @@
 <?php
 
-$nom = "Sara";
-$age = 21;
+$nom = "";
+$ville = "";
+
+if (isset($_GET["nom"])) {
+    $nom = $_GET["nom"];
+}
+
+if (isset($_GET["ville"])) {
+    $ville = $_GET["ville"];
+}
 
 ?>
 
@@ -10,23 +18,28 @@ $age = 21;
 
 <head>
     <meta charset="UTF-8">
-    <title>PHP et HTML</title>
+    <title>GET avec PHP</title>
 </head>
 
 <body>
 
-    <h1>Mon profil</h1>
+    <h1>Exemple avec GET</h1>
 
-    <p>
-        Bonjour
-        <?php echo $nom; ?>
-    </p>
+    <?php
 
-    <p>
-        Vous avez
-        <?php echo $age; ?>
-        ans.
-    </p>
+    if ($nom != "") {
+        echo "<p>Bonjour " . htmlspecialchars($nom) . "</p>";
+    } else {
+        echo "<p>Aucun nom reçu.</p>";
+    }
+
+    if ($ville != "") {
+        echo "<p>Ville : " . htmlspecialchars($ville) . "</p>";
+    } else {
+        echo "<p>Aucune ville reçue.</p>";
+    }
+
+    ?>
 
 </body>
 
