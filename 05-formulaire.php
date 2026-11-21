@@ -1,22 +1,26 @@
 <?php
 
 $produit = "";
+$categorie = "";
 $prix = "";
 $quantite = "";
 $message = "";
 
 if (
     isset($_POST["produit"])
+    && isset($_POST["categorie"])
     && isset($_POST["prix"])
     && isset($_POST["quantite"])
 ) {
 
     $produit = $_POST["produit"];
+    $categorie = $_POST["categorie"];
     $prix = $_POST["prix"];
     $quantite = $_POST["quantite"];
 
     if (
         $produit != ""
+        && $categorie != ""
         && $prix > 0
         && $quantite > 0
     ) {
@@ -63,6 +67,23 @@ if (
                 type="text"
                 id="produit"
                 name="produit"
+                required
+            >
+
+        </div>
+
+        <br>
+
+        <div>
+
+            <label for="categorie">
+                Catégorie :
+            </label>
+
+            <input
+                type="text"
+                id="categorie"
+                name="categorie"
                 required
             >
 
@@ -140,6 +161,7 @@ if (
         <p>
             Produit :
             <?php echo htmlspecialchars($produit); ?>
+            (catégorie : <?php echo htmlspecialchars($categorie); ?>)
         </p>
 
         <p>
